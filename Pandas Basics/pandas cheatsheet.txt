@@ -1,0 +1,72 @@
+---------------------------Pandas Cheatsheat----------------------------
+
+
+pd.DataFrame(dictionary)	Preview data in tabular form
+
+data.to_csv('new_file_name')	Data will be stored in to new file
+
+data.to_csv('new_file_name',index = False)	" index will be removed
+
+data.head(n)			Shows only first n rows
+
+data.tail(n)			Shows only last n rows
+
+data.describe()			Calculates count, mean, standard deviation, percentile
+
+x = pd.read_csv('file_name')	Opens the csv file 
+
+x[col_name][indexNo] = 'string'	Changes the value on given spot
+
+x.to_csv('filename')		save changes to given file
+
+pd.Series(np.random.rand(34))	Gives series from 0 to 333 with random numbers
+
+df = pd.DataFrame(np.random.rand(335,5),index=arange(334))	Gives data of 334 rowss and 5 columns
+
+df.dtypes			gives datatypes of every column
+
+df.index			Gives you all index numbers
+
+df.isnull().sum()		Show the null values count in dataframe
+
+df.to_numpy()			Convert data frame into numpy array
+
+df.T				Gives you transpose
+
+df.sort_index(axis=0,ascending=False)	sorts data frame in descending order
+
+df2 = df			It does not make copy of df. it's just pointing df. Any changes in df2 will directly change df
+ 
+df2 = df.copy()			It'll make a copy of df
+
+df.loc[row,coulmn]		It is use to access value of particular row and column. Efficient Way!
+
+df.column = list(ABCD)		If you want to change column names, add them as a list according to their number
+
+df.loc[0,'A']			Using Loc operator always use the specific name of row and column
+
+df.drop(col_name,axis=1)	This will delete the given column
+
+df.dropna()			This will delete the whole row where none value exists
+
+df.drop_duplicates(subset=[col_name])	Will delete duplicates within the given column
+
+df.loc[[1,2],['C','D']		First bracket set id for rows and second for column                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+df.loc[[1,2],[:]]		Shows row 1 and 2 of all columns
+
+df.loc[[:],['C','D']		Shows all row of C and D columns
+
+df['B'].isnull()		Retrun true value where ever the value is null otherwise false
+
+df.loc[(df['A']<0.3) & (df['C']<0.2)]
+
+Note: "iloc" is same as loc operator . If you want to point rows or columns by index number then use "iloc" 
+Or if you want to access rows or columns by their original name then use "loc"
+
+df.shape
+
+df.info
+
+df['col_name'].value_counts(dropna=False)	Gives the values and their counts of given column also shows the none valuse if dropna is false
+
+
